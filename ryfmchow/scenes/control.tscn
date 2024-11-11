@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmjtqj22re0k4"]
+
+[ext_resource type="Script" path="res://scripts/control.gd" id="1_wairy"]
+[ext_resource type="AudioStream" uid="uid://dcawugot6nk61" path="res://songs/Rhythm Hell.wav" id="2_3fh3i"]
+[ext_resource type="AudioStream" uid="uid://d2rlli4rnqo4h" path="res://songs/boss fight.mp3" id="3_wvss2"]
+[ext_resource type="AudioStream" uid="uid://7cie68xob805" path="res://songs/2 PHÚT HƠN FUNK.mp3" id="4_bhbbr"]
+[ext_resource type="AudioStream" uid="uid://cwy205q0nmjmd" path="res://songs/Kings of Swing.mp3" id="5_dakb4"]
+
+[node name="RhythmGame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wairy")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="RhythmHell" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3fh3i")
+
+[node name="BossFight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wvss2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 1168.0
+offset_bottom = 656.0
+color = Color(0, 0, 0, 1)
+
+[node name="square" type="ColorRect" parent="."]
+visibility_layer = 7
+layout_mode = 0
+offset_left = 552.0
+offset_top = 296.0
+offset_right = 600.0
+offset_bottom = 344.0
+
+[node name="score_label" type="RichTextLabel" parent="."]
+top_level = true
+visibility_layer = 4
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 56.0
+fit_content = true
+scroll_active = false
+tab_size = 6
+
+[node name="2PhútHơnFunk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bhbbr")
+volume_db = -12.18
+
+[node name="KingsOfSwing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dakb4")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

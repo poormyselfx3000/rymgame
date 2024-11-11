@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2md8wm7tthce"]
+
+[ext_resource type="Script" path="res://scripts/beat_bar.gd" id="1_m5auy"]
+
+[node name="BeatBar" type="Control" groups=["beat_bar"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -42.0
+offset_top = 301.0
+offset_right = -2.0
+offset_bottom = 341.0
+script = ExtResource("1_m5auy")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = -480.0
+offset_right = 40.0
+offset_bottom = 168.0
+scale = Vector2(1, 1.84)
